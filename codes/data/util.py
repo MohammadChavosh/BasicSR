@@ -7,7 +7,7 @@ import lmdb
 import torch
 import cv2
 import logging
-from data.get_fingerprint_images_list import get_fingerprint_images_list
+from data.fingerprint_dataset_utils import get_fingerprint_images_list
 
 IMG_EXTENSIONS = ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG', '.ppm', '.PPM', '.bmp', '.BMP']
 
