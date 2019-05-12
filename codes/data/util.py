@@ -7,6 +7,7 @@ import lmdb
 import torch
 import cv2
 import logging
+from data.get_fingerprint_images_list import get_fingerprint_images_list
 
 IMG_EXTENSIONS = ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG', '.ppm', '.PPM', '.bmp', '.BMP']
 
@@ -54,6 +55,8 @@ def get_image_paths(data_type, dataroot):
             env, paths = _get_paths_from_lmdb(dataroot)
         elif data_type == 'img':
             paths = sorted(_get_paths_from_images(dataroot))
+        elif data_type == 'fingerprint':
+            paths = sorted(get_fingerprint_images_list(dataroot))
         else:
             raise NotImplementedError('data_type [{:s}] is not recognized.'.format(data_type))
     return env, paths
