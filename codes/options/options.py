@@ -33,7 +33,11 @@ def parse(opt_path, is_train=True):
             dataset['dataroot_LR'] = os.path.expanduser(dataset['dataroot_LR'])
             if dataset['dataroot_LR'].endswith('lmdb'):
                 is_lmdb = True
-        dataset['data_type'] = 'lmdb' if is_lmdb else 'img'
+
+        if dataset['name'] == 'fingerprint':
+            dataset['data_type'] = 'fingerprint'
+        else:
+            dataset['data_type'] = 'lmdb' if is_lmdb else 'img'
 
         if phase == 'train' and 'subset_file' in dataset and dataset['subset_file'] is not None:
             dataset['subset_file'] = os.path.expanduser(dataset['subset_file'])

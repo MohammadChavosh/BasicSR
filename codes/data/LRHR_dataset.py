@@ -30,8 +30,8 @@ class LRHRDataset(data.Dataset):
             if opt['dataroot_LR'] is not None:
                 raise NotImplementedError('Now subset only supports generating LR on-the-fly.')
         else:  # read image list from lmdb or image files
-            self.HR_env, self.paths_HR = util.get_image_paths(opt['data_type'], opt['dataroot_HR'])
-            self.LR_env, self.paths_LR = util.get_image_paths(opt['data_type'], opt['dataroot_LR'])
+            self.HR_env, self.paths_HR = util.get_image_paths(opt['data_type'], opt['dataroot_HR'], True)
+            self.LR_env, self.paths_LR = util.get_image_paths(opt['data_type'], opt['dataroot_LR'], False)
 
         assert self.paths_HR, 'Error: HR path is empty.'
         if self.paths_LR and self.paths_HR:

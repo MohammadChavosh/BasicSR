@@ -48,7 +48,7 @@ def _get_paths_from_lmdb(dataroot):
     return env, paths
 
 
-def get_image_paths(data_type, dataroot):
+def get_image_paths(data_type, dataroot, HR_true=True):
     env, paths = None, None
     if dataroot is not None:
         if data_type == 'lmdb':
@@ -56,7 +56,7 @@ def get_image_paths(data_type, dataroot):
         elif data_type == 'img':
             paths = sorted(_get_paths_from_images(dataroot))
         elif data_type == 'fingerprint':
-            paths = sorted(get_fingerprint_images_list(dataroot))
+            paths = sorted(get_fingerprint_images_list(dataroot, HR_true))
         else:
             raise NotImplementedError('data_type [{:s}] is not recognized.'.format(data_type))
     return env, paths
