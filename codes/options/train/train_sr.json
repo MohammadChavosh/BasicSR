@@ -19,12 +19,12 @@
       , "use_flip": true
       , "use_rot": true
     }
-//    , "val": {
-//      "name": "val_set5"
-//      , "mode": "LRHR"
-//      , "dataroot_HR": "/mnt/SSD/xtwang/BasicSR_datasets/val_set5/Set5"
-//      , "dataroot_LR": "/mnt/SSD/xtwang/BasicSR_datasets/val_set5/Set5_bicLRx4"
-//    }
+    , "val": {
+      "name": "fingerprint"
+      , "mode": "LRHR"
+      , "dataroot_HR": "/home/sadegh/Fingerprint_files/sd09/"
+      , "dataroot_LR": "/home/sadegh/Fingerprint_files/sd09/"
+    }
   }
 
   , "path": {
@@ -39,8 +39,8 @@
     , "mode": "CNA"
     , "nf": 64
     , "nb": 23
-    , "in_nc": 3
-    , "out_nc": 3
+    , "in_nc": 1
+    , "out_nc": 1
     , "gc": 32
     , "group": 1
   }
